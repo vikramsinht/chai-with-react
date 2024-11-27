@@ -1,12 +1,21 @@
+import { useRef } from "react";
 
-import Chai  from "./Chai";
 
 function App() {
+  const ref = useRef(0);
+  function handleClick() {
+    ref.current?.select();
+    // alert('You clicked ' + ref.current + ' times!');
+  }
   return (
-    <>
-      <h1>Chai aur react | VT </h1>
-      <Chai />
-    </>
+        <>
+        <input type="text" 
+        ref={ref}
+        />
+      <button
+        onClick={handleClick}
+      >Click Me</button>
+      </>
   );
 }
 
